@@ -1,0 +1,15 @@
+version: '3'
+services:
+  python:
+    build: raw
+    image: apk_inference_image
+    container_name: apk_inference_container
+#    command: tail -f dev/null
+    restart: unless-stopped
+    volumes:
+      - ./raw:/raw
+    ports:
+      - "8000:8000"
+    tty: true
+    environment:
+      DATASET_NAME: ${PYTHON_DATASET_NAME}
