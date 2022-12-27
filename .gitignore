@@ -1,4 +1,5 @@
 **/.idea
 data
 query_imgs
+**/__pycache__
 
