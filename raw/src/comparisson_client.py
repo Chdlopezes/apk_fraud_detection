@@ -2,9 +2,9 @@ import json
 import datetime
 import pathlib
 import pandas as pd
-from src import scrap_stores
-from src.study_processors_modules import create_study, process_study
-from src.study_processors_modules import agg_study, collapse_agg
+from raw.src import scrap_stores
+from raw.src.study_processors_modules import create_study, process_study
+from raw.src.study_processors_modules import agg_study, collapse_agg
 
 
 class ComparisonClient:
