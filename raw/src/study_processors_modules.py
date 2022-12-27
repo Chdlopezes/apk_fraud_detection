@@ -1,12 +1,12 @@
 import os
 import pandas as pd
 import numpy as np
-from src.image_processor_modules import load_and_process_img
-from src.image_processor_modules import descriptor_matches
-from src.image_processor_modules import other_distances
-from src.image_processor_modules import other_similarities
-from src.image_processor_modules import color_similarities
-from src.image_processor_modules import color_distances
+from raw.src.image_processor_modules import load_and_process_img
+from raw.src.image_processor_modules import descriptor_matches
+from raw.src.image_processor_modules import other_distances
+from raw.src.image_processor_modules import other_similarities
+from raw.src.image_processor_modules import color_similarities
+from raw.src.image_processor_modules import color_distances
 
 
 def create_study(anchors_path, query_img_path, query_img_name):

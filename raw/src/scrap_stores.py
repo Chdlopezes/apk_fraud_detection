@@ -1,8 +1,8 @@
 import argparse
 import os
-from src import utils
-from src import scrap_appstore
-from src import scrap_googlePlay
+from raw.src import utils
+from raw.src import scrap_appstore
+from raw.src import scrap_googlePlay
 
 
 def main(CLIENT, STORE, download_images_dir, download_results_file):

@@ -61,7 +61,7 @@ class ComparisonClient:
     @classmethod
     def load_scrap_info_from_client(cls, scrap_info_path):
         with open(scrap_info_path, "r") as h:
-            scrap_info_json = json.load(scrap_info_path)
+            scrap_info_json = json.load(h)
         return scrap_info_json
 
     def compare_anchors_with_query(self, query_info):

@@ -1,7 +1,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
-from src.utils import download_image, save_query_results
+from raw.src.utils import download_image, save_query_results
 
 
 DOWNLOAD_IMAGES = True
@@ -70,7 +70,7 @@ def get_app_data(app_url, img_url):
     return app_data
 
 
-def main(search_query_0, download_images_dir, download_results_dir):
+def main(search_query_0, download_images_dir, download_results_file):
     search_query = search_query_0.replace(' ', '-')
     url = f'https://www.apple.com/us/search/{search_query}?src=globalnav'
     app_urls, img_urls = get_app_urls(url)
@@ -81,15 +81,20 @@ def main(search_query_0, download_images_dir, download_results_dir):
 
         if img_url == '':
             continue
-
-        if DOWNLOAD_IMAGES:
-            download_image(img_url, download_images_dir)
-
         app_data = get_app_data(app_url, img_url)
+        app_name = app_data['app_url']
+        if DOWNLOAD_IMAGES:
+            image_path = f'{download_images_dir}/{app_name}.png'
+            download_image(img_url, image_path)
+            # download_image(img_url, download_images_dir)
+        else:
+            image_path = None
+
+        app_data['img_path'] = image_path
         apps_data.append(app_data)
 
     if SAVE_RESULTS:
-        save_query_results(apps_data, download_results_dir, STORE)
+        save_query_results(apps_data, download_results_file, STORE)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-from src.utils import download_image, save_query_results
+from raw.src.utils import download_image, save_query_results
 
 
 DOWNLOAD_IMAGES = True
