@@ -1,0 +1,7 @@
+pandas==1.4.3
+numpy==1.23.0
+opencv-contrib-python==4.6.0.66
+requests==2.25.1
+sewar==0.4.5
+beautifulsoup4==4.11.1
+
